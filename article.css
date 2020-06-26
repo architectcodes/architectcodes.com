@@ -1,0 +1,107 @@
+:root {
+    --spacing: 8vw;
+    --negative-spacing: calc(-1 * var(--spacing));
+    --line-height: 1.2;
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: barlow, sans-serif;
+    font-weight: 300;
+    font-size: calc(14px + 0.5vw);
+    line-height: var(--line-height);
+}
+
+h1, .h1-scrim {
+    --offset: 0.2em;
+    --transition-function: cubic-bezier(0, 0, 0, 1);
+    --transition-duration: 200ms;
+    position: fixed;
+    padding: 0 var(--offset) var(--offset);
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    font-family: montserrat, sans-serif;
+    font-weight: 900;
+    font-size: calc(6vh + 2.5vw);
+    text-align: right;
+    line-height: 0.9;
+    transition-duration: var(--transition-duration);
+    transition-property: transform, visibility;
+    transition-timing-function: var(--transition-function), step-start;
+}
+h1 {
+    z-index: 3;
+}
+.h1-scrim {
+    pointer-events: none;
+    transition: opacity var(--transition-function) var(--transition-duration);
+    color: transparent;
+}
+.h1-scrim::before {
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.83) 30%, transparent);
+    top: -3em;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+h1.hidden {
+    transform: translateY(100%);
+    visibility: hidden;
+    transition-timing-function: var(--transition-function), step-end;
+}
+h1.hidden + .h1-scrim {
+    opacity: 0;
+}
+
+article {
+    padding: calc(30vw - 10vh);
+}
+
+.cover-image,
+img {
+    margin: var(--spacing) var(--negative-spacing);
+}
+
+img {
+    width: calc(100% + 2 * var(--spacing));
+    height: auto;
+    display: block;
+}
+
+.cover-image {
+    position: relative;
+    margin-top: var(--negative-spacing);
+    z-index: 2;
+}
+.cover-image::after {
+    position: absolute;
+    pointer-events: none;
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to right top, rgba(0, 255, 255, 0.7), rgba(255, 0, 255, 0.4));
+}
+.cover-image img {
+    margin: 0;
+    width: 100%;
+}
+
+p, blockquote {
+    margin-bottom: calc(var(--line-height) * 1rem);
+}
+
+blockquote {
+    font-weight: 100;
+    font-size: 2em;
+    font-style: italic;
+}

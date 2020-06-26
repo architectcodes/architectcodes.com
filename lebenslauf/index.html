@@ -1,0 +1,127 @@
+<!doctype html>
+<head>
+    <title>Tomek Wiszniewski&ensp;📐&ensp;the architect&ensp;💻&ensp;that works with code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon-precomposed" href="favicon-180.png">
+    <link href="https://fonts.googleapis.com/css?family=Barlow:100,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,800" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header id='header'>
+        <h1>architect.codes</h1>
+        <p class='tagline'>
+            <span class='tagline-section'>Tomek Wiszniewski</span>
+            <span class='tagline-section'><span class='tagline-emoji'>📐</span> the architect</span>
+            <span class='tagline-section'><span class='tagline-emoji'>💻</span> that works with code</span>
+        </p>
+    </header>
+    <main>
+        <div class="photo-background">
+            <img class="photo" src="photo.jpg" />
+        </div>
+        <h1>Lebenslauf</h1>
+        <table>
+            <tr>
+                <th>Name</th>
+                <td><h3>Tomasz Wiszniewski<h3></td>
+            </tr>
+            <tr>
+                <th>Geburt</th>
+                <td>9.02.1992, Warschau, Polen</td>
+            </tr>
+            <tr>
+                <th>Familienstand</th>
+                <td>verheiratet, 2 Kinder geb. 2014 und 2016</td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><div class="section"><h2>Ausbildung</h2></div></td>
+            </tr>
+            <tr>
+                <th>SS 2016 – WS 2017</th>
+                <td>Pause im Masterstudium wegen Kindererziehung</td>
+            </tr>
+            <tr>
+                <th>SS 2014 – WS 2015</th>
+                <td>
+                    <h3>TU Braunschweig, Architektur</h3>
+                    Schwerpunkt: Anwendungsfälle von Programmiertechnik in Architektonischen Prozessen.
+                </td>
+            </tr>
+            <tr>
+                <th>WS 2010 – WS 2013</th>
+                <td>
+                    <h3>TU Wrocław, Architektur und Städtebau</h3>
+                    <div>Diplomarbeit: digitale Fabrikation der Wohnhabitaten für Flüchtlingen.</div>
+                    <div>Abschlussnote: 5.0 (sehr gut).</div>
+                </td>
+            </tr>
+            <tr>
+                <th>2007 – 2010</th>
+                <td>
+                    <h3>Liceum Ogólnokształcące im. Staszica, Warschau</h3>
+                    Im 2007 Gewinner im Landweiten Programmierwettbewerb
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><div class="section"><h2>Berufstätigkeit & Volontariat</h2></div></td>
+            </tr>
+            <tr>
+                <th>ab 2016</th>
+                <td>
+                    <h3>Kalo Industries Ltd</h3>
+                    Lead Product and Infrastructure Engineer
+                </td>
+            </tr>
+            <tr>
+                <th>2014 – 2016</th>
+                <td>
+                    <h3>Studio B12 GmbH</h3>
+                    Senior UI Engineer
+                </td>
+            </tr>
+            <tr>
+                <th>2013</th>
+                <td>
+                    <h3>Make Camp Łódź</h3>
+                    Führung des Workshops über digitaler Fabrikation
+                </td>
+            </tr>
+            <tr>
+                <th>2010 – 2014</th>
+                <td>
+                    <h3>Freelancer Web Designer und Entwickler</h3>
+                </td>
+            </tr>
+            <tr>
+                <th>2011 – 2012</th>
+                <td>
+                    Scouts d’Europe, Führer der Pfadfindergruppe
+                </td>
+            </tr>
+        </table>
+    </main>
+    <script>
+        (() => {
+            const header = document.querySelector('#header');
+            const background = document.createElement('div');
+            background.classList.add('background');
+            const finish = () => header.insertBefore(background, header.firstChild);
+            const loader = new Image();
+            Promise.all([
+                new Promise(resolve => loader.addEventListener('load', resolve)),
+                new Promise(resolve => setTimeout(resolve, 500))
+            ]).then(finish);
+            loader.src = '/background.jpg';
+        })();
+    </script>
+    <div class="cut-marks">
+        <div class="top-left"></div>
+        <div class="top-right"></div>
+        <div class="bottom-right"></div>
+        <div class="bottom-left"></div>
+    </div>
+</body>
